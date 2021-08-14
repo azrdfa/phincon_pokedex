@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 const DefaultNavbar = () => {
   console.log("Render DefaultNavbar")
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand>Tokopedia Pokedex</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

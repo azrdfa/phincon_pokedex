@@ -1,14 +1,14 @@
 import { MyPokemonContext } from '../contexts/MyPokemonContext'
 
-const MyPokemonPage = () => {
-  console.log("Render MyPokemonPage")
+const MyPokemonListPage = () => {
+  console.log("Render MyPokemonListPage")
     return (
         <MyPokemonContext.Consumer>
           {(context) => {
             console.log(context)
             return (
               <>
-                <h1>MyPokemonPage</h1>
+                <h1>MyPokemonListPage</h1>
               </>
             )
           }}
@@ -16,4 +16,4 @@ const MyPokemonPage = () => {
     )
 }
 
-export default MyPokemonPage
+export default MyPokemonListPage

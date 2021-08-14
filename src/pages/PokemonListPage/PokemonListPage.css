@@ -1,0 +1,13 @@
+.card {
+    margin: 1rem;
+}
+
+.card .body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
