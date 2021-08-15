@@ -6,6 +6,7 @@ import MovesTab from '../components/Tabs/MovesTab'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import Image from 'react-bootstrap/Image'
+import CatchButton from '../components/Buttons/CatchButton'
 
 const PokemonDetailPage = ({ match }) => {
   console.log("Render PokemonDetailPage")
@@ -14,7 +15,6 @@ const PokemonDetailPage = ({ match }) => {
   })
   if (loading) return "Loading ..."
   if (error) return "Error ..."
-  console.log(data)
   return (
     <>
       {data.pokemon.name}
@@ -26,9 +26,10 @@ const PokemonDetailPage = ({ match }) => {
         }
       </ul>
       <Image src={data.pokemon.sprites.front_default} />
+      <CatchButton pokemon={data.pokemon} />
       <Tabs defaultActiveKey="about">
         <Tab eventKey="about" title="About">
-          <AboutTab 
+          <AboutTab
             height={data.pokemon.height}
             weight={data.pokemon.weight}
             abilities={data.pokemon.abilities}
@@ -36,7 +37,7 @@ const PokemonDetailPage = ({ match }) => {
           />
         </Tab>
         <Tab eventKey="stats" title="Stats">
-          <StatsTab stats={data.pokemon.stats}/>
+          <StatsTab stats={data.pokemon.stats} />
         </Tab>
         <Tab eventKey="moves" title="Moves">
           <MovesTab moves={data.pokemon.moves} />
