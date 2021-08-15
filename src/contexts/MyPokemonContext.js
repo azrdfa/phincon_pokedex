@@ -1,32 +1,28 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 
 export const MyPokemonContext = createContext()
 
 const MyPokemonContextProvider = (props) => {
-  const [state, setState] = useState({
-    myPokemon: [
-      { id: 1, name: "Bulbasaur", nickname: "a" },
-      { id: 1, name: "Bulbasaur", nickname: "b" },
-      { id: 2, name: "Ivysaur", nickname: "c" }
-    ]
-  })
+  const [myPokemon, setMyPokemon] = useState([
+    { id: 1, name: "Bulbasaur", nickname: "a" },
+    { id: 1, name: "Bulbasaur", nickname: "b" },
+    { id: 2, name: "Ivysaur", nickname: "c" }
+  ])
   const addPokemon = (pokemon) => {
-    setState({
-      myPokemon: [...state.myPokemon, pokemon],
-    })
+    setMyPokemon([...myPokemon, pokemon])
   }
   const removePokemon = (nickname) => {
-    setState({
-      myPokemon: state.myPokemon.filter(pokemon => pokemon.nickname !== nickname)
-    })
+    setMyPokemon(
+      myPokemon.filter(elem => elem.nickname !== nickname)
+    )
   }
   return (
     <MyPokemonContext.Provider value={{
-      ...state,
+      myPokemon: myPokemon,
       addPokemon: addPokemon,
       removePokemon: removePokemon
     }}>
-      { props.children }
+      {props.children}
     </MyPokemonContext.Provider>
   )
 }
