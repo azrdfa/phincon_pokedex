@@ -1,10 +1,10 @@
 const AboutTab = ({ height, weight, abilities }) => {
   console.log("Render AboutTab")
   return (
-    <>
-      Height: {height} <br />
-      Weight: {weight} <br />
-      Abilities: <br />
+    <ul>
+      <li>Height: {height}</li>
+      <li>Weight: {weight}</li>
+      <li>Abilities:</li>
       <ul>
         {
           abilities.map(elem => {
@@ -12,7 +12,7 @@ const AboutTab = ({ height, weight, abilities }) => {
           })
         }
       </ul>
-    </>
+    </ul>
   )
 }
 
