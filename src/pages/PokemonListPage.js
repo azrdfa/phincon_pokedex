@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { useQuery } from '@apollo/client'
-import GET_POKEMONS from '../../queries/pokemonsQuery'
-import { MyPokemonContext } from '../../contexts/MyPokemonContext'
+import GET_POKEMONS from '../queries/pokemonsQuery'
+import { MyPokemonContext } from '../contexts/MyPokemonContext'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import DefaultPagination from '../../components/Paginations/DefaultPagination'
-import './PokemonListPage.css'
+import DefaultPagination from '../components/Paginations/DefaultPagination'
 import { LinkContainer } from 'react-router-bootstrap'
 
 const PokemonListPage = () => {
@@ -49,8 +48,8 @@ const PokemonListPage = () => {
           <>
             {
               pokemons.map(pokemon => {
-                return <Card key={pokemon.id} className={"card"}>
-                  <Card.Body className={"body"}>
+                return <Card key={pokemon.id} style={{ margin: "1rem" }}>
+                  <Card.Body style={{ display: "flex", justifyContent: "space-between" }}>
                     <div>
                       <Card.Title>{pokemon.name}</Card.Title>
                       <Card.Subtitle>Own {pokemon.owned}</Card.Subtitle>
@@ -62,12 +61,13 @@ const PokemonListPage = () => {
                 </Card>
               })
             }
-            <DefaultPagination
-              handlePrevPage={state.offset !== 0 ? handlePrevPage : null}
-              handleNextPage={state.offset !== Math.floor(data.pokemons.count / 10) * 10 ? handleNextPage : null}
-              currPage={state.currPage}
-              className={"pagination"}
-            />
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <DefaultPagination
+                handlePrevPage={state.offset !== 0 ? handlePrevPage : null}
+                handleNextPage={state.offset !== Math.floor(data.pokemons.count / 10) * 10 ? handleNextPage : null}
+                currPage={state.currPage}
+              />
+            </div>
           </>
         )
       }}

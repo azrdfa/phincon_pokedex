@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import MyPokemonContextProvider from "./contexts/MyPokemonContext"
 import DefaultNavbar from './components/Navbars/DefaultNavbar'
-import PokemonListPage from "./pages/PokemonListPage/PokemonListPage"
+import PokemonListPage from "./pages/PokemonListPage"
 import PokemonDetailPage from "./pages/PokemonDetailPage"
 import MyPokemonListPage from "./pages/MyPokemonListPage"
 
