@@ -1,10 +1,14 @@
-const MovesTab = () => {
-    console.log("Render MovesTab")
-    return (
-        <div>
-            <h1>MovesTab</h1>
-        </div>
-    )
+const MovesTab = ({ moves }) => {
+  console.log("Render MovesTab")
+  return (
+    <ul>
+      {
+        moves.map(elem => {
+          return <li key={elem.move.name}>{elem.move.name}</li>
+        })
+      }
+    </ul>
+  )
 }
 
 export default MovesTab

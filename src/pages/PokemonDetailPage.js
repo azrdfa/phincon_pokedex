@@ -29,7 +29,7 @@ const PokemonDetailPage = ({ match }) => {
           <StatsTab stats={data.pokemon.stats}/>
         </Tab>
         <Tab eventKey="moves" title="Moves">
-          <MovesTab />
+          <MovesTab moves={data.pokemon.moves} />
         </Tab>
       </Tabs>
     </>
