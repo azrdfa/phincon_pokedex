@@ -1,4 +1,4 @@
-const AboutTab = ({ height, weight, abilities, types }) => {
+const AboutTab = ({ height, weight, abilities }) => {
   console.log("Render AboutTab")
   return (
     <>
@@ -9,14 +9,6 @@ const AboutTab = ({ height, weight, abilities, types }) => {
         {
           abilities.map(elem => {
             return <li key={elem.ability.name}>{elem.ability.name}</li>
-          })
-        }
-      </ul>
-      Types: <br />
-      <ul>
-        {
-          types.map(elem => {
-            return <li key={elem.type.name}>{elem.type.name}</li>
           })
         }
       </ul>

@@ -5,6 +5,7 @@ import StatsTab from '../components/Tabs/StatsTab'
 import MovesTab from '../components/Tabs/MovesTab'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
+import Image from 'react-bootstrap/Image'
 
 const PokemonDetailPage = ({ match }) => {
   console.log("Render PokemonDetailPage")
@@ -16,6 +17,15 @@ const PokemonDetailPage = ({ match }) => {
   console.log(data)
   return (
     <>
+      {data.pokemon.name}
+      <ul>
+        {
+          data.pokemon.types.map(elem => {
+            return <li key={elem.type.name}>{elem.type.name}</li>
+          })
+        }
+      </ul>
+      <Image src={data.pokemon.sprites.front_default} />
       <Tabs defaultActiveKey="about">
         <Tab eventKey="about" title="About">
           <AboutTab 
