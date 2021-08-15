@@ -1,36 +1,35 @@
-import React, { Component, createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const MyPokemonContext = createContext()
 
-class MyPokemonContextProvider extends Component {
-  state = {
+const MyPokemonContextProvider = (props) => {
+  const [state, setState] = useState({
     myPokemon: [
-      { id: 1, name: "Bulbasaur", nickname: "a"},
-      { id: 1, name: "Bulbasaur", nickname: "b"},
-      { id: 2, name: "Ivysaur", nickname: "c"}
+      { id: 1, name: "Bulbasaur", nickname: "a" },
+      { id: 1, name: "Bulbasaur", nickname: "b" },
+      { id: 2, name: "Ivysaur", nickname: "c" }
     ]
-  }
-  addPokemon = (pokemon) => {
-    this.setState({
-      myPokemon: [...this.state.myPokemon, pokemon],
+  })
+  const addPokemon = (pokemon) => {
+    setState({
+      myPokemon: [...state.myPokemon, pokemon],
     })
   }
-  removePokemon = (nickname) => {
-    this.setState({
-      myPokemon: this.state.myPokemon.filter(pokemon => pokemon.nickname !== nickname)
+  const removePokemon = (nickname) => {
+    setState({
+      myPokemon: state.myPokemon.filter(pokemon => pokemon.nickname !== nickname)
     })
-  } 
-  render() {
-    return (
-      <MyPokemonContext.Provider value={{
-        ...this.state, 
-        addPokemon: this.addPokemon,
-        removePokemon: this.removePokemon
-      }}>
-        {this.props.children}
-      </MyPokemonContext.Provider>
-    )
   }
+  return (
+    <MyPokemonContext.Provider value={{
+      ...state,
+      addPokemon: addPokemon,
+      removePokemon: removePokemon
+    }}>
+      { props.children }
+    </MyPokemonContext.Provider>
+  )
 }
+
 
 export default MyPokemonContextProvider
