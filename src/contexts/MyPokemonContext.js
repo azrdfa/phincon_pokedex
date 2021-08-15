@@ -3,11 +3,13 @@ import React, { createContext, useState, useEffect } from 'react'
 export const MyPokemonContext = createContext()
 
 const MyPokemonContextProvider = (props) => {
-  const [myPokemon, setMyPokemon] = useState([
-    { id: 1, name: "Bulbasaur", nickname: "a" },
-    { id: 1, name: "Bulbasaur", nickname: "b" },
-    { id: 2, name: "Ivysaur", nickname: "c" }
-  ])
+  const [myPokemon, setMyPokemon] = useState(() => {
+    const localMyPokemon = localStorage.getItem("myPokemon")
+    return localMyPokemon ? JSON.parse(localMyPokemon) : []
+  })
+  useEffect(() => {
+    localStorage.setItem("myPokemon", JSON.stringify(myPokemon))
+  }, [myPokemon])
   const addPokemon = (pokemon) => {
     setMyPokemon([...myPokemon, pokemon])
   }
