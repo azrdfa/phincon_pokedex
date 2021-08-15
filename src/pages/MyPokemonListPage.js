@@ -5,7 +5,6 @@ const MyPokemonListPage = () => {
     return (
         <MyPokemonContext.Consumer>
           {(context) => {
-            console.log(context)
             return (
               <>
                 <h1>MyPokemonListPage</h1>

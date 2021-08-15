@@ -1,20 +1,35 @@
 import { gql } from '@apollo/client'
 
 const GET_POKEMON = gql`
-  pokemon(name: $name) {
-    id
-    name
-    sprites {
-      front_default
-    }
-    moves {
-      move {
-        name
+  query pokemon($name: String!) {
+    pokemon(name: $name) {
+      id
+      name
+      sprites {
+        front_default
       }
-    }
-    types {
-      type {
-        name
+      height
+      weight
+      abilities {
+        ability {
+          name
+        }
+      }
+      types {
+        type {
+          name
+        }
+      }
+      stats {
+        base_stat
+        stat {
+          name
+        }
+      }
+      moves {
+        move {
+          name
+        }
       }
     }
   }

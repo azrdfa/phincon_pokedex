@@ -14,7 +14,7 @@ const App = () => {
         <Switch>
           <MyPokemonContextProvider>
             <Route path="/" exact component={PokemonListPage} />
-            <Route path="/pokemondetail/:id" component={PokemonDetailPage} />
+            <Route path="/pokemondetail/:name" component={PokemonDetailPage} />
             <Route path="/mypokemon" component={MyPokemonListPage} />
           </MyPokemonContextProvider>
         </Switch>

@@ -41,12 +41,9 @@ const PokemonListPage = () => {
         const countOwned = (id) => {
           return context.myPokemon.filter(pokemon => pokemon.id === id).length
         }
-        const capitalizeFirstLetter = (string) => {
-          return string.charAt(0).toUpperCase() + string.slice(1);
-        }
         const pokemons = data.pokemons.results.map(pokemon => {
           const id = getId(pokemon.url)
-          return { id: id, name: capitalizeFirstLetter(pokemon.name), owned: countOwned(id) }
+          return { id: id, name: pokemon.name, owned: countOwned(id) }
         })
         return (
           <>
@@ -58,7 +55,7 @@ const PokemonListPage = () => {
                       <Card.Title>{pokemon.name}</Card.Title>
                       <Card.Subtitle>Own {pokemon.owned}</Card.Subtitle>
                     </div>
-                    <LinkContainer to={`/pokemondetail/${pokemon.id}`}>
+                    <LinkContainer to={`/pokemondetail/${pokemon.name}`}>
                       <Button variant="primary">Detail</Button>
                     </LinkContainer>
                   </Card.Body>
