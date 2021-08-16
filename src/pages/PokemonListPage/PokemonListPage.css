@@ -1,0 +1,31 @@
+.plp-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 1rem;
+}
+
+.plp-flex-item {
+    flex-basis: 25%;
+}
+
+.plp-card {
+    margin: 0.5rem;
+}
+
+.plp-subtitle {
+    color: #808080
+}
+
+.plp-button-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    .plp-flex-item {
+        flex-basis: 50%
+    }
+  }
