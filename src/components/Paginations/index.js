@@ -1,4 +1,4 @@
-import DefaultPagination from './DefaultPagination'
+import DefaultPagination from './DefaultPagination/DefaultPagination'
 
 export {
     DefaultPagination

@@ -1,9 +1,10 @@
 import Pagination from 'react-bootstrap/Pagination'
+import "./DefaultPagination.css"
 
 const DefaultPagination = ({ handlePrevPage, handleNextPage, currPage }) => {
   console.log("Render DefaultPagination")
   return (
-    <div style={{display: "flex", justifyContent: "center"}}>
+    <div className="dp-container">
       <Pagination>
         <Pagination.Prev
           onClick={handlePrevPage}

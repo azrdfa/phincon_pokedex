@@ -1,0 +1,9 @@
+.cb-button {
+    width: 150px;
+}
+
+.cb-button-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

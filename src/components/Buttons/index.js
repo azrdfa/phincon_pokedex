@@ -1,4 +1,4 @@
-import CatchButton from "./CatchButton"
+import CatchButton from "./CatchButton/CatchButton"
 
 export {
     CatchButton
