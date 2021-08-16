@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button'
 import CatchModal from '../Modals/CatchModal'
 import { useState } from 'react'
+import { CgPokemon } from 'react-icons/cg'
 
 const CatchButton = ({ pokemon }) => {
   console.log("Render CatchButton")
@@ -34,7 +35,13 @@ const CatchButton = ({ pokemon }) => {
       <Button
         variant="primary"
         onClick={catchPokemon}
-      >Catch</Button>
+        style={{width: "150px"}}
+      >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <span>Catch</span>
+          <CgPokemon size={20} />
+        </div>
+      </Button>
       <CatchModal
         showModal={state.showModal}
         catchStatus={state.catchStatus}
