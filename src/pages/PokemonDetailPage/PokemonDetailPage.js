@@ -1,0 +1,63 @@
+import { useQuery } from '@apollo/client'
+import GET_POKEMON from '../../queries/pokemonQuery'
+import { CatchButton } from '../../components/Buttons'
+import { AboutTab, MovesTab, StatsTab } from '../../components/Tabs'
+import {
+  Tabs, Tab, Image,
+  Badge
+} from 'react-bootstrap'
+import { restyleId, restyleName } from '../../restyles'
+import "./PokemonDetailPage.css"
+
+const PokemonDetailPage = ({ match }) => {
+  console.log("Render PokemonDetailPage")
+  const { loading, error, data } = useQuery(GET_POKEMON, {
+    variables: { name: match.params.name }
+  })
+  if (loading) return "Loading ..."
+  if (error) return "Error ..."
+  return (
+    <div className="my-container">
+      <div className="my-identity-container">
+        <h2 className="my-name">{restyleName(data.pokemon.name)}</h2>
+        <h6>{restyleId(data.pokemon.id)}</h6>
+      </div>
+      <div className="my-badge-container">
+        {
+          data.pokemon.types.map(elem => {
+            return <Badge
+              bg="primary"
+              key={elem.type.name}
+              className="my-badge"
+            >{elem.type.name}</Badge>
+          })
+        }
+      </div>
+      <div className="my-image-catch-button-container">
+        <Image
+          src={data.pokemon.sprites.front_default}
+          className="my-image"
+        /><br />
+        <CatchButton pokemon={data.pokemon} />
+      </div>
+      <Tabs defaultActiveKey="about">
+        <Tab eventKey="about" title="About">
+          <AboutTab
+            height={data.pokemon.height}
+            weight={data.pokemon.weight}
+            abilities={data.pokemon.abilities}
+            types={data.pokemon.types}
+          />
+        </Tab>
+        <Tab eventKey="stats" title="Stats">
+          <StatsTab stats={data.pokemon.stats} />
+        </Tab>
+        <Tab eventKey="moves" title="Moves">
+          <MovesTab moves={data.pokemon.moves} />
+        </Tab>
+      </Tabs>
+    </div>
+  )
+}
+
+export default PokemonDetailPage

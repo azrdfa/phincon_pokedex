@@ -1,0 +1,37 @@
+.my-container {
+    margin: 1rem
+}
+
+.my-identity-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.my-name {
+    margin-right: 0.5rem;
+}
+
+.my-badge-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.my-badge {
+    margin-right: 0.5rem;
+}
+
+.my-image-catch-button-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.my-image {
+    margin-bottom: 0.5rem;
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0d6efd;
+    border-radius: 10px
+}
