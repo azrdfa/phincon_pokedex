@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import MyPokemonContextProvider from "./contexts/MyPokemonContext"
 import DefaultNavbar from './components/Navbars/DefaultNavbar'
 import {
+  HomePage,
   PokemonListPage,
   PokemonDetailPage,
   MyPokemonListPage
@@ -15,9 +16,10 @@ const App = () => {
         <DefaultNavbar />
         <Switch>
           <MyPokemonContextProvider>
-            <Route path="/" exact component={PokemonListPage} />
+            <Route path="/tokopedia_pokedex" exact component={HomePage} />
+            <Route path="/pokemonlist" component={PokemonListPage} />
             <Route path="/pokemondetail/:name" component={PokemonDetailPage} />
-            <Route path="/mypokemon" component={MyPokemonListPage} />
+            <Route path="/mypokemonlist" component={MyPokemonListPage} />
           </MyPokemonContextProvider>
         </Switch>
       </div>
