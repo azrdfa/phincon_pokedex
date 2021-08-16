@@ -47,6 +47,7 @@ const MovesTab = ({ moves }) => {
         handlePrevPage={state.currPage === 1 ? null : handlePrevPage}
         handleNextPage={state.currPage === state.lastPage ? null : handleNextPage}
         currPage={state.currPage}
+        lastPage={state.lastPage}
       />
     </div>
   )

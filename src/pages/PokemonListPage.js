@@ -11,13 +11,14 @@ const PokemonListPage = () => {
   console.log("Render PokemonListPage")
   const [state, setState] = useState({
     offset: 0,
-    currPage: 1
+    currPage: 1,
   })
   const { loading, error, data } = useQuery(GET_POKEMONS, {
     variables: { limit: 10, offset: state.offset }
   })
   if (loading) return "Loading ..."
   if (error) return "Error ..."
+  const lastPage = Math.ceil(data.pokemons.count / 10)
   const handlePrevPage = () => {
     setState({
       offset: data.pokemons.prevOffset,
@@ -65,6 +66,7 @@ const PokemonListPage = () => {
               handlePrevPage={state.offset !== 0 ? handlePrevPage : null}
               handleNextPage={state.offset !== Math.floor(data.pokemons.count / 10) * 10 ? handleNextPage : null}
               currPage={state.currPage}
+              lastPage={lastPage}
             />
           </>
         )
