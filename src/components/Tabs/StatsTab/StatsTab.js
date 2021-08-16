@@ -5,11 +5,11 @@ import "./StatsTab.css"
 const StatsTab = ({ stats }) => {
   console.log("Render StatsTab")
   return (
-    <div className="container">
+    <div className="st-container">
       {
         stats.map(elem => {
-          return <Row key={elem.stat.name} className="item">
-            <Col className="label">{restyleLabel(elem.stat.name)}</Col>
+          return <Row key={elem.stat.name} className="st-item">
+            <Col className="st-label">{restyleLabel(elem.stat.name)}</Col>
             <Col xs={2}>{elem.base_stat}</Col>
             <Col xs={6}><ProgressBar now={elem.base_stat} max={200} /></Col>
           </Row>

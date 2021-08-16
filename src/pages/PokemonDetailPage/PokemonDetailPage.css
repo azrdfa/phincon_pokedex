@@ -1,32 +1,32 @@
-.my-container {
+.pdp-container {
     margin: 1rem
 }
 
-.my-identity-container {
+.pdp-identity-container {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
 }
 
-.my-name {
+.pdp-name {
     margin-right: 0.5rem;
 }
 
-.my-badge-container {
+.pdp-badge-container {
     display: flex;
     justify-content: flex-start;
 }
 
-.my-badge {
+.pdp-badge {
     margin-right: 0.5rem;
 }
 
-.my-image-catch-button-container {
+.pdp-image-catch-button-container {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
-.my-image {
+.pdp-image {
     margin-bottom: 0.5rem;
     width: 150px;
     height: 150px;

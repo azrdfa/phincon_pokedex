@@ -29,12 +29,12 @@ const MovesTab = ({ moves }) => {
     })
   }
   return (
-    <div className="container">
+    <div className="mt-container">
       {
         currMoves.map(elem => {
           return <div key={elem.move.name}>
             {restyleMoveName(elem.move.name)}<br />
-            <span className="level">
+            <span className="mt-level">
               {restyleLevel(
                 elem.version_group_details[0].level_learned_at
               )}

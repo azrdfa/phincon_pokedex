@@ -1,11 +1,11 @@
-.container {
+.st-container {
     margin: 0.5rem;
 }
 
-.item {
+.st-item {
     margin-bottom: 0.5rem;
 }
 
-.label {
+.st-label {
     color: #808080;
 }
