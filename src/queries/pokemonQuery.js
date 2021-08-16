@@ -30,6 +30,9 @@ const GET_POKEMON = gql`
         move {
           name
         }
+        version_group_details {
+          level_learned_at
+        }
       }
     }
   }

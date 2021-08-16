@@ -4,7 +4,7 @@ import GET_POKEMONS from '../queries/pokemonsQuery'
 import { MyPokemonContext } from '../contexts/MyPokemonContext'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import DefaultPagination from '../components/Paginations/DefaultPagination'
+import { DefaultPagination } from '../components/Paginations'
 import { LinkContainer } from 'react-router-bootstrap'
 
 const PokemonListPage = () => {
@@ -61,13 +61,11 @@ const PokemonListPage = () => {
                 </Card>
               })
             }
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <DefaultPagination
-                handlePrevPage={state.offset !== 0 ? handlePrevPage : null}
-                handleNextPage={state.offset !== Math.floor(data.pokemons.count / 10) * 10 ? handleNextPage : null}
-                currPage={state.currPage}
-              />
-            </div>
+            <DefaultPagination
+              handlePrevPage={state.offset !== 0 ? handlePrevPage : null}
+              handleNextPage={state.offset !== Math.floor(data.pokemons.count / 10) * 10 ? handleNextPage : null}
+              currPage={state.currPage}
+            />
           </>
         )
       }}
