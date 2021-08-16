@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useQuery } from '@apollo/client'
 import GET_POKEMONS from '../../queries/pokemonsQuery'
 import { MyPokemonContext } from '../../contexts/MyPokemonContext'
-import {Card, Button} from "react-bootstrap"
+import { Card, Button, Image } from "react-bootstrap"
 import { DefaultPagination } from '../../components/Paginations'
 import { LinkContainer } from 'react-router-bootstrap'
 import "./PokemonListPage.css"
@@ -54,9 +54,12 @@ const PokemonListPage = () => {
                 pokemons.map(pokemon => {
                   return <div key={pokemon.id} className="plp-flex-item">
                     <Card className="plp-card">
-                      <Card.Body>
-                        <Card.Title>{restyleName(pokemon.name)}</Card.Title>
-                        <Card.Subtitle className="plp-subtitle">You own {pokemon.owned}</Card.Subtitle>
+                      <Card.Body style={{ display: "flex", justifyContent: "flex-start" }}>
+                        <Image style={{ marginRight: "1rem", height: "96px", width: "96px" }} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/201.png" className="plp-image" />
+                        <div>
+                          <span style={{ marginRight: "0.5rem" }}>{restyleName(pokemon.name)}</span><br />
+                          <span className="plp-subtitle">You own {pokemon.owned}</span>
+                        </div>
                       </Card.Body>
                       <Card.Footer className="d-grid gap-2">
                         <LinkContainer to={`/pokemondetail/${pokemon.name}`}>

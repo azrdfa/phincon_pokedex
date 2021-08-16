@@ -34,7 +34,8 @@ const CatchModal = ({ showModal, catchStatus, closeModal, pokemon }) => {
     addPokemon({
       id: pokemon.id,
       name: pokemon.name,
-      nickname: state.nickname
+      nickname: state.nickname,
+      sprite: pokemon.sprites.front_default
     })
     closeModal()
     setState({
