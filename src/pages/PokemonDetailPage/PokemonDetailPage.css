@@ -1,3 +1,7 @@
+.pdp-fullheight-container {
+    height: 100vh;
+}
+
 .pdp-container {
     margin: 1rem
 }

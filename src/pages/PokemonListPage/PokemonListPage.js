@@ -8,6 +8,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import "./PokemonListPage.css"
 import { restyleName } from '../../restyles'
 import { BiInfoCircle } from 'react-icons/bi'
+import Loading from "../../components/Loading/Loading"
 
 const PokemonListPage = () => {
   console.log("Render PokemonListPage")
@@ -18,7 +19,9 @@ const PokemonListPage = () => {
   const { loading, error, data } = useQuery(GET_POKEMONS, {
     variables: { limit: 10, offset: state.offset }
   })
-  if (loading) return "Loading ..."
+  if (loading) return <div className="plp-fullheight-container">
+    <Loading />
+  </div>
   if (error) return "Error ..."
   const lastPage = Math.ceil(data.pokemons.count / 10)
   const handlePrevPage = () => {

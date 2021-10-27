@@ -7,9 +7,8 @@ const HomePage = () => {
         <div style={{ margin: "1rem" }}>
             <h1>Phincon Pokedex</h1>
             <p>
-                This website was created in order to complete the Project Assignment for
-                <b>Software Engineer - Mobile or Web Platform</b> role. This website was
-                created in 2 days starting from Tuesday, October 26 2021 to Wednesday,
+                This website was created in order to complete the Project Assignment for <b>Software Engineer - Mobile or Web Platform</b> role.
+                This website was created in 2 days starting from Tuesday, 26 October 2021 to Wednesday,
                 October 27 2021. The following are the points that I do and do not do
                 to help assess the examiner.
                 <br /><br />

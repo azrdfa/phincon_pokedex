@@ -7,6 +7,7 @@ import {
   Badge
 } from 'react-bootstrap'
 import { restyleId, restyleName } from '../../restyles'
+import Loading from "../../components/Loading/Loading"
 import "./PokemonDetailPage.css"
 
 const PokemonDetailPage = ({ match }) => {
@@ -14,7 +15,9 @@ const PokemonDetailPage = ({ match }) => {
   const { loading, error, data } = useQuery(GET_POKEMON, {
     variables: { name: match.params.name }
   })
-  if (loading) return "Loading ..."
+  if (loading) return <div className="pdp-fullheight-container">
+    <Loading />
+  </div>
   if (error) return "Error ..."
   return (
     <div className="pdp-container">
