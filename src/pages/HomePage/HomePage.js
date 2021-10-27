@@ -62,6 +62,8 @@ const HomePage = () => {
                         <b>(Not Finsihed)</b>Any additional implementation microservice with containerization is an added value
                     </li>
                 </ol>
+                Some of the points that I did not work on were caused by the lack of time provided. I'm sure I can do better if more time is given.
+                <br /><br />
                 Regards,<br />
                 Azhar Difa Arnanda<br />
             </p>
