@@ -6,16 +6,16 @@ const DefaultNavbar = () => {
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
-        <LinkContainer to={"/tokopedia_pokedex"}>
-          <Navbar.Brand>Tokopedia Pokedex</Navbar.Brand>
+        <LinkContainer to={"/phincon_pokedex"}>
+          <Navbar.Brand>Phincon Pokedex</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" activeKey="/tokopedia_pokedex">
-            <LinkContainer to={"/pokemonlist"}>
-              <Nav.Link eventKey="/pokemonlist">Pokemon List</Nav.Link>
+          <Nav className="me-auto" activeKey="/phincon_pokedex">
+            <LinkContainer to={"/phincon_pokedex/pokemonlist"}>
+              <Nav.Link eventKey="/phincon_pokedex/pokemonlist">Pokemon List</Nav.Link>
             </LinkContainer>
-            <LinkContainer to={"/mypokemonlist"}>
+            <LinkContainer to={"/phincon_pokedex/mypokemonlist"}>
               <Nav.Link eventKey="/mypokemon">My Pokemon</Nav.Link>
             </LinkContainer>
           </Nav>

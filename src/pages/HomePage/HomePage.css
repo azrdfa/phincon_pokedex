@@ -1,0 +1,11 @@
+.hp-ol {
+    list-style-position: inside;
+}
+
+input[type = "checkbox"] {
+    margin-right: 10px;
+}
+
+.hp-ol {
+    font-size: 12px;
+}

@@ -62,7 +62,7 @@ const PokemonListPage = () => {
                         </div>
                       </Card.Body>
                       <Card.Footer className="d-grid gap-2">
-                        <LinkContainer to={`/pokemondetail/${pokemon.name}`}>
+                        <LinkContainer to={`/phincon_pokedex/pokemondetail/${pokemon.name}`}>
                           <Button size="sm" variant="primary">
                             <div className="plp-button-content">
                               More Info

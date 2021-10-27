@@ -16,10 +16,10 @@ const App = () => {
         <DefaultNavbar />
         <Switch>
           <MyPokemonContextProvider>
-            <Route path="/tokopedia_pokedex" exact component={HomePage} />
-            <Route path="/pokemonlist" component={PokemonListPage} />
-            <Route path="/pokemondetail/:name" component={PokemonDetailPage} />
-            <Route path="/mypokemonlist" component={MyPokemonListPage} />
+            <Route path="/phincon_pokedex" exact component={HomePage} />
+            <Route path="/phincon_pokedex/pokemonlist" component={PokemonListPage} />
+            <Route path="/phincon_pokedex/pokemondetail/:name" component={PokemonDetailPage} />
+            <Route path="/phincon_pokedex/mypokemonlist" component={MyPokemonListPage} />
           </MyPokemonContextProvider>
         </Switch>
       </div>

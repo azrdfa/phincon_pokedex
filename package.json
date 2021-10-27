@@ -1,6 +1,6 @@
 {
-  "name": "tokopedia_pokedex",
-  "homepage": "http://ketikketik.github.io/tokopedia_pokedex",
+  "name": "phincon_pokedex",
+  "homepage": "http://ketikketik.github.io/phincon_pokedex",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
